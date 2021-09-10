@@ -24,9 +24,9 @@ public class MainManager : MonoBehaviour
 
     private void Start()
     {
+        // Display best player and their score (saved in HighScoreManager)
         bestPlayer = HighScoreManager.Instance.savedName;
         BestScoreText.text = $"Best Score: {bestPlayer} : {HighScoreManager.Instance.bestScore}";
-
 
         const float step = 0.6f;
         int perLine = Mathf.FloorToInt(4.0f / step);
@@ -81,6 +81,7 @@ public class MainManager : MonoBehaviour
             GetBestScore();
     }
 
+    // If new score is higher than the score saved in HighScoreManager, update and save score
     void GetBestScore()
     {
         if (m_Points >= HighScoreManager.Instance.bestScore)

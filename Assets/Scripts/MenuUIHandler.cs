@@ -19,6 +19,8 @@ public class MenuUIHandler : MonoBehaviour
 
     public void StartGame()
     {
+        // start game only if player has entered a name
+        if (NameText.text != "") 
         SceneManager.LoadScene(1);  
     }
 
